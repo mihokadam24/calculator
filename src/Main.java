@@ -8,9 +8,23 @@ public class Main {
         */
         Scanner io = new Scanner(System.in);
         outLine("Számológép program");
-        int menuItem;
-        menuItem = displayMenu(io);
-        outLine("A válaszod: " + menuItem);
+        int menuItem = displayMenu(io);
+        //outLine("A válaszod: " + menuItem);
+        switch (menuItem) {
+            case 1:
+                outLine("Összeadás");
+                break;
+            case 2:
+                outLine("Kivonás");
+                break;
+            case 3:
+                outLine("Szorzás");
+                break;
+            case 4:
+                outLine("Osztás");
+                break;
+        }
+        outLine("Köszönöm, hogy kipróbáltad!");
     }
 
     public static int displayMenu(Scanner io) {
