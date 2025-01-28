@@ -8,7 +8,12 @@ public class Main {
         */
         Scanner io = new Scanner(System.in);
         outLine("Számológép program");
+        int menuItem;
+        menuItem = displayMenu(io);
+        outLine("A válaszod: " + menuItem);
+    }
 
+    public static int displayMenu(Scanner io) {
         String dataLine;
         int answer = -1;
         do {
@@ -32,8 +37,7 @@ public class Main {
                 outLine("------------------------------------");
             }
         } while (answer == -1); // bennmaradási feltétel kell
-
-        outLine("A válaszod: " + answer);
+        return answer;
     }
 
     public static void outLine(String message) {
