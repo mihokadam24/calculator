@@ -9,22 +9,30 @@ public class Main {
           Feladat: készíts 4 alapműveletes számológépet, menüvel
         */
         outLine("Számológép program");
-        int menuItem = displayMenu(io);
-        switch (menuItem) {
-            case 1:
-                addition();
-                break;
-            case 2:
-                subtraction();
-                break;
-            case 3:
-                multiplication();
-                break;
-            case 4:
-                division();
-                break;
-        }
+        int menuItem;
+        do {
+            menuItem = displayMenu(io);
+            switch (menuItem) {
+                case 1:
+                    addition();
+                    break;
+                case 2:
+                    subtraction();
+                    break;
+                case 3:
+                    multiplication();
+                    break;
+                case 4:
+                    division();
+                    break;
+            }
+            if (menuItem != 0) { // kilépés esetén ne jelenítse meg
+                pressAnyKey(io);
+                outLine("------------------------------------");
+            }
+        } while (menuItem != 0);
         outLine("Köszönöm, hogy kipróbáltad!");
+        //pressAnyKey(io); // arra az esetre, ha konzolba szeretnénk futtatni, nem az IDE-n belül
     }
 
     // konstansok, a bevitelhez
@@ -32,6 +40,11 @@ public class Main {
     public static final float MAXIMUM = 2000000;
     public static final String NUMBER1LABEL = "Kérem az első számot (" + MINIMUM + " - " + MAXIMUM + "): ";
     public static final String NUMBER2LABEL = "Kérem a második számot (" + MINIMUM + " - " + MAXIMUM + "): ";
+
+    public static void pressAnyKey(Scanner io) {
+        out("Nyomj le egy Enter-t a továbblépéshez!");
+        io.nextLine();
+    }
 
     public static void addition() {
         outLine("Összeadás");
