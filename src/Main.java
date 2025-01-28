@@ -16,7 +16,7 @@ public class Main {
                 addition();
                 break;
             case 2:
-                outLine("Kivonás");
+                subtraction();
                 break;
             case 3:
                 outLine("Szorzás");
@@ -39,6 +39,14 @@ public class Main {
         float number1 = input(NUMBER1LABEL, MINIMUM, MAXIMUM, io);
         float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
         float result = number1 + number2;
+        outLine("A két szám összege: " + result);
+    }
+
+    public static void subtraction() {
+        outLine("Kivonás");
+        float number1 = input(NUMBER1LABEL, MINIMUM, MAXIMUM, io);
+        float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
+        float result = number1 - number2;
         outLine("A két szám összege: " + result);
     }
 
