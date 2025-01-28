@@ -10,7 +10,6 @@ public class Main {
         */
         outLine("Számológép program");
         int menuItem = displayMenu(io);
-        //outLine("A válaszod: " + menuItem);
         switch (menuItem) {
             case 1:
                 addition();
@@ -31,8 +30,8 @@ public class Main {
     // konstansok, a bevitelhez
     public static final float MINIMUM = -2000000;
     public static final float MAXIMUM = 2000000;
-    public static final String NUMBER1LABEL = "Kérem az első számot (-2000000 - 2000000): ";
-    public static final String NUMBER2LABEL = "Kérem a második számot (-2000000 - 2000000): ";
+    public static final String NUMBER1LABEL = "Kérem az első számot (" + MINIMUM + " - " + MAXIMUM + "): ";
+    public static final String NUMBER2LABEL = "Kérem a második számot (" + MINIMUM + " - " + MAXIMUM + "): ";
 
     public static void addition() {
         outLine("Összeadás");
