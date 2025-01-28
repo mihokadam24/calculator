@@ -26,10 +26,6 @@ public class Main {
                     division();
                     break;
             }
-            if (menuItem != 0) { // kilépés esetén ne jelenítse meg
-                pressAnyKey(io);
-                outLine("------------------------------------");
-            }
         } while (menuItem != 0);
         outLine("Köszönöm, hogy kipróbáltad!");
         //pressAnyKey(io); // arra az esetre, ha konzolba szeretnénk futtatni, nem az IDE-n belül
@@ -52,6 +48,8 @@ public class Main {
         float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
         float result = number1 + number2;
         outLine("A két szám összege: " + result);
+        pressAnyKey(io);
+        outLine("------------------------------------");
     }
 
     public static void subtraction() {
@@ -60,6 +58,8 @@ public class Main {
         float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
         float result = number1 - number2;
         outLine("A két szám különbsége: " + result);
+        pressAnyKey(io);
+        outLine("------------------------------------");
     }
 
     public static void multiplication() {
@@ -68,6 +68,8 @@ public class Main {
         float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
         double result = number1 * number2; // azért, hogy a számtartományból biztosan ne lépjen ki
         outLine("A két szám szorzata: " + result);
+        pressAnyKey(io);
+        outLine("------------------------------------");
     }
 
     public static void division() {
@@ -82,6 +84,8 @@ public class Main {
         } while (number2 == 0); // bennmaradási feltétel kell
         float result = number1 / number2;
         outLine("A két szám hányadosa: " + result);
+        pressAnyKey(io);
+        outLine("------------------------------------");
     }
 
     public static float input(String message, float minimum, float maximum, Scanner io) {
