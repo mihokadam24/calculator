@@ -22,7 +22,7 @@ public class Main {
                 multiplication();
                 break;
             case 4:
-                outLine("Osztás");
+                division();
                 break;
         }
         outLine("Köszönöm, hogy kipróbáltad!");
@@ -56,6 +56,20 @@ public class Main {
         float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
         double result = number1 * number2; // azért, hogy a számtartományból biztosan ne lépjen ki
         outLine("A két szám szorzata: " + result);
+    }
+
+    public static void division() {
+        outLine("Osztás");
+        float number1 = input(NUMBER1LABEL, MINIMUM, MAXIMUM, io);
+        float number2;
+        do {
+            number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
+            if (number2 == 0) {
+                outLine("Az osztó nem lehet nulla (0)!");
+            }
+        } while (number2 == 0); // bennmaradási feltétel kell
+        float result = number1 / number2;
+        outLine("A két szám hányadosa: " + result);
     }
 
     public static float input(String message, float minimum, float maximum, Scanner io) {
