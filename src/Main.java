@@ -19,7 +19,7 @@ public class Main {
                 subtraction();
                 break;
             case 3:
-                outLine("Szorzás");
+                multiplication();
                 break;
             case 4:
                 outLine("Osztás");
@@ -47,7 +47,15 @@ public class Main {
         float number1 = input(NUMBER1LABEL, MINIMUM, MAXIMUM, io);
         float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
         float result = number1 - number2;
-        outLine("A két szám összege: " + result);
+        outLine("A két szám különbsége: " + result);
+    }
+
+    public static void multiplication() {
+        outLine("Szorzás");
+        float number1 = input(NUMBER1LABEL, MINIMUM, MAXIMUM, io);
+        float number2 = input(NUMBER2LABEL, MINIMUM, MAXIMUM, io);
+        double result = number1 * number2; // azért, hogy a számtartományból biztosan ne lépjen ki
+        outLine("A két szám szorzata: " + result);
     }
 
     public static float input(String message, float minimum, float maximum, Scanner io) {
